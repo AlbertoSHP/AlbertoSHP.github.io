@@ -85,6 +85,53 @@ h6 {
   font-weight: 800;
 }
 
+.intro {
+  background: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: intro-slide 5s linear;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+}
+
+.intro .hide{
+  height: 100px;
+  overflow: hidden;
+}
+
+.welcome-text{
+  font-size: 5rem;
+  color: #d06100;
+  font-weight: bolder;
+  animation: texting-slide 1s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes texting-slide {
+  0% {margin-top:100px;}
+  100% {margin-top:0px;}
+}
+
+@keyframes intro-slide {
+  0% {margin-top:0%;}
+  10% {margin-top:-10%;}
+  20% {margin-top:-20%;}
+  30% {margin-top:-30%;}
+  40% {margin-top:-40%;}
+  50% {margin-top:-50%;}
+  60% {margin-top:-60%;}
+  70% {margin-top:-70%;}
+  80% {margin-top:-80%;}
+  90% {margin-top:-90%;}
+  100% {margin-top:-100%;}
+}
+
 .masthead {
   min-height: 30rem;
   position: relative;
@@ -93,7 +140,7 @@ h6 {
   height: auto;
   padding-top: 8rem;
   padding-bottom: 8rem;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/bg-masthead.jpg");
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/header-image-front.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -103,6 +150,172 @@ h6 {
   font-size: 4rem;
   margin: 0;
   padding: 0;
+}
+
+.masthead .container {
+  position: relative;
+}
+
+
+
+.masthead .container .header-text{
+      animation: textTitle 3s 1;
+      color: #ecb807;
+}
+
+.masthead .container .header-subtext{
+    animation: fadeIn 3s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    width: 50%;
+    margin: 0 auto;
+    color: #ff9a00;
+}
+
+.initialButton{
+  /*position: absolute;*/
+  /*animation: animationButton 4s;*/
+  animation: fadeInButton 4s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  animation-delay: 3s;
+  margin-top: 60px;
+}
+
+@keyframes fadeInButton{
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+      margin-top: -10px;
+    }
+}
+
+@keyframes animationButton{
+    90% {
+      margin-left: -484px;
+      transform: rotate(40deg);
+    }
+    91% {
+      left: 30px;
+      transform: rotate(80deg);
+    }
+    92% {
+      left: 50px;
+      transform: rotate(120deg);
+    }
+    93% {
+      left: 90px;
+      transform: rotate(140deg);
+    }
+    94% {
+      left: 130px;
+      transform: rotate(170deg);
+    }
+    95% {
+      left: 140px;
+      transform: rotate(180deg);
+    }
+    96% {
+      left: 150px;
+      transform: rotate(210deg);
+    }
+    97% {
+      left: 160px;
+      transform: rotate(240deg);
+    }
+    98% {
+      left: 180px;
+      transform: rotate(280deg);
+    }
+    100% {
+      left: 200px;
+      transform: rotate(360deg);
+    }
+}
+
+@keyframes textTitle {
+  0%{
+    color: black;
+    margin-bottom: -2px;
+
+  }
+  30%{
+    letter-spacing: 10px;
+    margin-bottom: -40px;
+
+  }
+  85%{
+    letter-spacing: 8px;
+    margin-bottom: -40px;
+
+  }
+}
+
+#introduction{
+  background-color: black;
+}
+
+#introduction h2{
+  color: #5f676f;
+  font-size: 5rem;
+}
+
+#introduction .list-group{
+  justify-content: center;
+}
+
+#introduction .list-group-item{
+  background-color: transparent;
+  color: white;
+}
+
+#introduction .no-padding-list li{
+  padding: 0;
+}
+
+#introduction a{
+  margin-top: 50px;
+  background-color: #098007 !important;
+  border-color: #098007 !important;
+}
+
+#introduction a:hover{
+  background-color: #066d05 !important;
+  border-color: #066d05 !important;
+}
+
+
+@keyframes fadeIn {
+  75% {opacity: 0}
+  95% {opacity: 0.2}
+  96% {opacity: 0.3}
+  97% {opacity: 0.4}
+  98% {opacity: 0.6}
+  99% {opacity: 0.8}
+  100% {opacity: 1}
+}
+
+#projects{
+  background-color: #dadada !important;
+}
+
+#projects h3{
+  font-size: 5rem;
+}
+
+#projects .row-projects{
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+#technologies{
+
+}
+
+#technologies h3{
+  font-size: 5rem;
 }
 
 @media (min-width: 992px) {
@@ -226,6 +439,159 @@ h6 {
   max-width: 30rem;
 }
 
+.portfolio-item:hover .caption-content{
+  opacity: 0;
+}
+
+.techs{
+  opacity: 0;
+  position: absolute;
+  margin: 2rem;
+  background-color: transparent;
+  width: 88.4%;
+  height: 83%;
+  transition: opacity 0.25s;
+}
+
+.techs .java{
+  /*background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/java.png");*/
+      background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url(../img/java.png);
+    background-color: white;
+}
+
+.techs .spring{
+  /*background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/java.png");*/
+      background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url(../img/spring-boot.png);
+    background-color: white;
+}
+
+.techs .python{
+  /*background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/java.png");*/
+      background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url(../img/python.png);
+    background-color: white;
+}
+
+.techs .html{
+  /*background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/java.png");*/
+      background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url(../img/html.png);
+    background-color: white;
+}
+
+.techs .css3{
+  /*background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/java.png");*/
+      background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url(../img/css3.png);
+    background-color: white;
+}
+
+.techs .scss{
+  /*background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/java.png");*/
+      background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url(../img/scss.png);
+    background-color: white;
+}
+
+.techs .javascript{
+  /*background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/java.png");*/
+      background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url(../img/javascript.png);
+    background-color: white;
+}
+
+.techs .jquery{
+  /*background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/java.png");*/
+      background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url(../img/jquery.gif);
+    background-color: white;
+}
+
+.techs .angular{
+  /*background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/java.png");*/
+      background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url(../img/angular-logo.png);
+    background-color: white;
+}
+
+.techs .oracle{
+  /*background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/java.png");*/
+      background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url(../img/oracle.png);
+    background-color: white;
+}
+
+.techs .postgres{
+  /*background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/java.png");*/
+      background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url(../img/postgresql.png);
+    background-color: white;
+}
+
+.techs .mysql{
+  /*background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/java.png");*/
+      background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url(../img/mysql.png);
+    background-color: white;
+}
+
+.techs .junit{
+  /*background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/java.png");*/
+      background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url(../img/junit.png);
+    background-color: white;
+}
+
+.techs .mockito{
+  /*background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/java.png");*/
+      background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url(../img/mockito.jpg);
+    background-color: white;
+}
+
+.techs .row{
+  margin: 0;
+}
+
+.techs .row > div{
+  height: 153px;
+  border: 1px solid;
+}
+
+.portfolio-item:hover .techs{
+  opacity: 1;
+}
+
 .portfolio-item {
   display: block;
   position: relative;
@@ -235,6 +601,7 @@ h6 {
 }
 
 .portfolio-item .caption {
+  position: relative;
   display: flex;
   height: 100%;
   width: 100%;
@@ -250,14 +617,35 @@ h6 {
   margin: auto 2rem 2rem;
 }
 
-.portfolio-item .caption .caption-content h2 {
-  font-size: 0.8rem;
+.portfolio-item .caption .caption-content .h2 {
+  font-size: 3rem;
   text-transform: uppercase;
 }
 
 .portfolio-item .caption .caption-content p {
   font-weight: 300;
   font-size: 1.2rem;
+}
+
+.portfolio-item img{
+  opacity: 0.5;
+}
+
+.caption{
+  background: linear-gradient(to bottom, transparent, #000000);
+}
+
+backend-text{
+
+}
+frontend-text{
+  
+}
+database-text{
+  color: black;
+}
+testing-text{
+  
 }
 
 @media (min-width: 992px) {
@@ -300,6 +688,11 @@ h6 {
   height: 100%;
   width: 100%;
   border: 0;
+}
+
+.contact-section{
+  padding: 7.5rem;
+  background-color: #ecb807;
 }
 
 footer.footer {

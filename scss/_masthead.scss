@@ -21,4 +21,13 @@
       font-size: 5.5rem;
     }
   }
+  .header-text-animation{
+    font-size: 60px;
+    font-weight: 700;
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+    background: #002f5f;
+    position: relative;
+    animation: text 3s 1;
+  }
 }
